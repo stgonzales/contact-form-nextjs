@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Karla } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/utils";
 
-const inter = Inter({ subsets: ["latin"] });
+const karla = Karla({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={cn(karla.className, "bg-green-200 w-screen h-screen text-body-md text-grey-900 transition-all")}>
+        <main className="w-full h-full flex justify-center items-center">
+          <section className="w-[736px] h-[773p] bg-white rounded-2xl p-500 flex flex-col gap-400">
+            {children}
+          </section>
+        </main>
+      </body>
     </html>
   );
 }
