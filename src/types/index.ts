@@ -7,4 +7,9 @@ export type ActionResponse<T> = {
     error?: Record<string, string | string[]>
 }
 
+export type DefaultInputType = {
+    label: string
+    stateMsg?: string
+} & Omit<InputHTMLAttributes<HTMLInputElement>, "type">
+
 export type ContactUsFormType = z.infer<typeof ContactUsSchema>
